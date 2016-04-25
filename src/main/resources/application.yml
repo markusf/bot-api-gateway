@@ -1,0 +1,15 @@
+server:
+  port: 7080
+zuul:
+  routes:
+    aqi:
+      path: /aqi-service/**
+      url: http://localhost:8080
+ribbon:
+  eureka:
+    enabled: false
+---
+spring:
+  profiles: container
+server:
+  port: ${APP_PORT:7080}
