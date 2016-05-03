@@ -1,0 +1,21 @@
+sudo: required
+
+language: java
+
+services:
+  - docker
+
+before_install:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  
+after_success:
+  - docker push pred2k3/api-gateway
+script: 
+  - mvn clean package
+
+install: true
+
+cache:
+  timeout: 1000
+  directories:
+    - $HOME/.m2
