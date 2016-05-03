@@ -13,3 +13,8 @@ spring:
   profiles: container
 server:
   port: ${APP_PORT:7080}
+zuul:
+  routes:
+    aqi:
+      path: /aqi-service/**
+      url: http://aqi-service:80
