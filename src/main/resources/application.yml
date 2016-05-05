@@ -5,6 +5,9 @@ zuul:
     aqi:
       path: /aqi-service/**
       url: http://localhost:8080
+    bot:
+      path: /bot/**
+      url: http://localhost:3000
 ribbon:
   eureka:
     enabled: false
@@ -18,3 +21,6 @@ zuul:
     aqi:
       path: /aqi-service/**
       url: http://aqi-service:80
+    bot:
+      path: /bot/**
+      url: http://aqi-bot:80
